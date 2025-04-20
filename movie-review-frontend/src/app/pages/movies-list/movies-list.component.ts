@@ -1,21 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { MovieService, Movie } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movies-list',
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './movies-list.component.html',
+  styleUrls: ['./movies-list.component.css']
 })
-export class MoviesListComponent {
-  movies: any[] = [];
+export class MoviesListComponent implements OnInit {
+  movies: Movie[] = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private movieService: MovieService) {}
 
-  ngOnInit() {
-    this.apiService.getMovies().subscribe((data) => {
+  ngOnInit(): void {
+    this.movieService.getMovies().subscribe((data) => {
       this.movies = data;
     });
   }

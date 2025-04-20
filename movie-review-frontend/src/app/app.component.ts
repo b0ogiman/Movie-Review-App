@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; // ✅ это нужно
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    HttpClientModule    // ✅ и это важно!
+  ],
+  template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
-  title = 'movie-review-frontend';
-}
+export class AppComponent {}
