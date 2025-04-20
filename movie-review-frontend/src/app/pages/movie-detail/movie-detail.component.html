@@ -1,7 +1,22 @@
-<h2>Movie details</h2>
-
 <div *ngIf="movie">
-  <h3>{{ movie.title }}</h3>
+  <h2>{{ movie.title }}</h2>
   <p>{{ movie.description }}</p>
-  <p><strong>Date of :</strong> {{ movie.release_date }}</p>
+  <p>Rating: {{ movie.rating }}</p>
+
+  <a [routerLink]="['/movie', movieId, 'review']">Оставить отзыв</a>
 </div>
+
+<hr />
+
+<h3>Reviews</h3>
+<div *ngIf="reviews.length > 0; else noReviews">
+  <div *ngFor="let review of reviews">
+    <p><strong>{{ review.author }}</strong>: {{ review.text }}</p>
+    <p>Rating: {{ review.rating }}</p>
+    <hr />
+  </div>
+</div>
+
+<ng-template #noReviews>
+  <p>Пока нет отзывов.</p>
+</ng-template>

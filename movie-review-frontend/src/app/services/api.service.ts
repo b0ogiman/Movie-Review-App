@@ -19,4 +19,12 @@ export class ApiService {
   getMovie(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/movies/${id}/`);
   }
+
+  getReviews(movieId: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/movies/${movieId}/reviews/`);
+  }
+
+  addReview(movieId: number, review: any) {
+    return this.http.post(`${this.baseUrl}/movies/${movieId}/reviews/`, review);
+  }
 }

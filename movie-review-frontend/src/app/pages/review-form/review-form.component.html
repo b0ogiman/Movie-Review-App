@@ -1,1 +1,18 @@
-<p>review-form works!</p>
+<h2>Добавить отзыв</h2>
+
+<form (ngSubmit)="submitReview()">
+  <div>
+    <label for="text">Отзыв:</label><br />
+    <textarea id="text" [(ngModel)]="text" name="text" rows="4" required></textarea>
+  </div>
+
+  <div>
+    <label for="rating">Рейтинг:</label><br />
+    <select id="rating" [(ngModel)]="rating" name="rating">
+      <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">{{ r }}</option>
+    </select>
+  </div>
+
+  <button type="submit">Отправить</button>
+</form>
+
