@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 from .views import MovieViewSet
+from .views import CreateReviewView
 
 from .views import (
     get_all_movies,
@@ -23,4 +24,5 @@ urlpatterns = router.urls + [
     path('reviews/like/', LikeReviewView.as_view(), name='like-review'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
+    path('api/reviews/create/', CreateReviewView.as_view(), name='create-review'),
 ]
