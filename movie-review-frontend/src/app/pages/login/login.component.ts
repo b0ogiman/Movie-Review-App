@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
   username: string = '';
@@ -23,11 +23,20 @@ export class LoginComponent {
       next: (response) => {
         localStorage.setItem('access', response.access);
         localStorage.setItem('refresh', response.refresh);
-        this.router.navigate(['/']); // перенаправляем на главную
+        this.router.navigate(['/genres']);
       },
       error: () => {
         this.errorMessage = 'Неверный логин или пароль';
       }
     });
+
+  }
+
+  forgotPassword() {
+    alert('Мы отправим вам ссылку для восстановления (в будущем 😄)');
   }
 }
+function forgotPassword() {
+  throw new Error('Function not implemented.');
+}
+

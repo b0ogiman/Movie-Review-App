@@ -1,0 +1,14 @@
+<div class="container py-4">
+    <h2 class="text-white mb-4">Выберите жанр 🎬</h2>
+  
+    <div class="row">
+      <div class="col-md-3" *ngFor="let genre of genres">
+        <div class="card genre-card" (click)="selectGenre(genre.id)">
+          <img [src]="genre.image" class="card-img-top" alt="{{genre.name}}">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ genre.name }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
