@@ -1,5 +1,5 @@
 .genre-page {
-    height: calc(100vh - 85px); // отнимаем высоту navbar
+    height: calc(100vh - 120px); 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@
     background-color: black;
     text-align: center;
     padding: 0 1rem;
-    overflow: hidden; // 💥 Убираем вертикальный скролл
+    overflow: hidden; 
   }
   
   .genre-page h1 {

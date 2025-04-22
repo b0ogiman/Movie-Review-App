@@ -5,10 +5,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { ReviewFormComponent } from './pages/review-form/review-form.component';
 import { GenresComponent } from './pages/genres/genres.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'genres', component: GenresComponent },
   { path: 'movies', component: MoviesListComponent },
   { path: 'movie/:id', component: MovieDetailComponent },

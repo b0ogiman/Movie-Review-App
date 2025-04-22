@@ -2,7 +2,7 @@ export const GENRES = [
     {
       id: 1,
       name: 'Comedy',
-      image: 'https://ic.pics.livejournal.com/kinocomedy/68170390/178499/178499_original.jpg'
+      image: 'https://ic.pics.livejournal.com/kinocomedy/68170390/131284/131284_original.jpg'
     },
     {
       id: 2,

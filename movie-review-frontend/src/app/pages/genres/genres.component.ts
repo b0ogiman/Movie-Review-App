@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../../shared/navbar/navbar.component'; // ✅ подключаем шапку
+import { NavbarComponent } from '../../shared/navbar/navbar.component'; 
 import { GENRES } from '../../core/mock/genres';
 
 @Component({
   selector: 'app-genres',
   standalone: true,
-  imports: [CommonModule, NavbarComponent], // ✅ добавили сюда
+  imports: [CommonModule, NavbarComponent], 
   templateUrl: './genres.component.html',
   styleUrls: ['./genres.component.scss']
 })
