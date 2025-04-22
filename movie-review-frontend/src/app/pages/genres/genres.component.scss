@@ -1,15 +1,53 @@
-.genre-card {
+.genre-page {
+    height: calc(100vh - 85px); // отнимаем высоту navbar
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+    padding: 0 1rem;
+    overflow: hidden; // 💥 Убираем вертикальный скролл
+  }
+  
+  .genre-page h1 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+  
+  .genre-card {
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: 0.3s ease;
+    width: 240px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
-    transition: transform 0.2s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
   
-    &:hover {
-      transform: scale(1.05);
-    }
+  .genre-card:hover {
+    border-color: #8b0000;
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.5);
+    transform: translateY(-6px);
+  }
   
-    img {
-      height: 220px;
-      object-fit: cover;
-    }
+  .genre-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .genre-card p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 1px;
   }

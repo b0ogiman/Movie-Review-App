@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8000/api';
-
-  constructor(private http: HttpClient) {}
-
   login(username: string, password: string): Observable<any> {
-    return this.http.post(`${this.baseUrl}/token/`, {
-      username,
-      password
+    console.log('🔥 FAKE login triggered with:', username, password);
+    return of({
+      access: 'fake_access_token',
+      refresh: 'fake_refresh_token'
     });
   }
+
   saveTokens(access: string, refresh: string) {
     localStorage.setItem('access_token', access);
     localStorage.setItem('refresh_token', refresh);

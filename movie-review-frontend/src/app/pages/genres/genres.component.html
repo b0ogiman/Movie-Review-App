@@ -1,14 +1,16 @@
-<div class="container py-4">
-    <h2 class="text-white mb-4">Выберите жанр 🎬</h2>
-  
-    <div class="row">
-      <div class="col-md-3" *ngFor="let genre of genres">
-        <div class="card genre-card" (click)="selectGenre(genre.id)">
-          <img [src]="genre.image" class="card-img-top" alt="{{genre.name}}">
-          <div class="card-body text-center">
-            <h5 class="card-title">{{ genre.name }}</h5>
-          </div>
-        </div>
-      </div>
+<app-navbar></app-navbar>
+
+<div class="genre-page d-flex flex-column align-items-center justify-content-center text-white">
+  <h1 class="mb-5 bebas text-center">Choose your genre</h1>
+
+  <div class="d-flex flex-wrap justify-content-center gap-4">
+    <div
+      class="genre-card text-center"
+      *ngFor="let genre of genres"
+      (click)="selectGenre(genre.id)"
+    >
+      <img [src]="genre.image" [alt]="genre.name" />
+      <p class="mt-2">{{ genre.name }}</p>
     </div>
   </div>
+</div>

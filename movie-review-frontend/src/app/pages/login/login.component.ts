@@ -19,24 +19,20 @@ export class LoginComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
   login() {
+    this.errorMessage = ''; // важно
+  
     this.authService.login(this.username, this.password).subscribe({
       next: (response) => {
-        localStorage.setItem('access', response.access);
-        localStorage.setItem('refresh', response.refresh);
+        this.authService.saveTokens(response.access, response.refresh);
         this.router.navigate(['/genres']);
       },
       error: () => {
-        this.errorMessage = 'Неверный логин или пароль';
+        this.errorMessage = 'Invalid username or password';
       }
     });
-
   }
 
   forgotPassword() {
     alert('Мы отправим вам ссылку для восстановления (в будущем 😄)');
   }
 }
-function forgotPassword() {
-  throw new Error('Function not implemented.');
-}
-

@@ -1,22 +1,15 @@
-<div *ngIf="movie">
-  <h2>{{ movie.title }}</h2>
-  <p>{{ movie.description }}</p>
-  <p>Rating: {{ movie.rating }}</p>
-
-  <a [routerLink]="['/movie', movieId, 'review']">Оставить отзыв</a>
-</div>
-
-<hr />
-
-<h3>Reviews</h3>
-<div *ngIf="reviews.length > 0; else noReviews">
-  <div *ngFor="let review of reviews">
-    <p><strong>{{ review.author }}</strong>: {{ review.text }}</p>
-    <p>Rating: {{ review.rating }}</p>
-    <hr />
+<div class="container text-white py-5" *ngIf="movie">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="movie.poster" class="img-fluid rounded shadow" />
+      </div>
+      <div class="col-md-8">
+        <h2 class="bebas mb-3">{{ movie.title }}</h2>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Rating:</strong> ⭐ {{ movie.rating }}</p>
+        <p>{{ movie.description }}</p>
+  
+        <a routerLink="/genres" class="btn btn-outline-light mt-4">← Back to Genres</a>
+      </div>
+    </div>
   </div>
-</div>
-
-<ng-template #noReviews>
-  <p>Пока нет отзывов.</p>
-</ng-template>

@@ -4,6 +4,7 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
 import { LoginComponent } from './pages/login/login.component';
 import { ReviewFormComponent } from './pages/review-form/review-form.component';
 import { GenresComponent } from './pages/genres/genres.component';
+import { AboutComponent } from './pages/about/about.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'genres', component: GenresComponent },
   { path: 'movies', component: MoviesListComponent },
   { path: 'movie/:id', component: MovieDetailComponent },
-  { path: 'movie/:id/review', component: ReviewFormComponent }
+  { path: 'movie/:id/review', component: ReviewFormComponent },
+  { path: 'about', component: AboutComponent } 
 ];

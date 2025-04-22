@@ -1,0 +1,12 @@
+img {
+    max-width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 3px solid #e50914;
+  }
+  
+  p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
