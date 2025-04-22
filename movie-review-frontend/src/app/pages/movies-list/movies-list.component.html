@@ -1,9 +1,23 @@
-<h2>🎬 Список фильмов</h2>
+<div class="movies-container">
+  <h1 class="bebas text-white text-center mb-5">
+    🎬 {{ filteredMovies.length ? filteredMovies[0].genre : 'All' }} Movies
+  </h1>
 
-<div *ngFor="let movie of movies">
-  <h3>{{ movie.title }} ({{ movie.genre }})</h3>
-  <p>{{ movie.description }}</p>
-  <p>⭐ Рейтинг: {{ movie.rating }}</p>
-  <a [routerLink]="['/movie', movie.id]">Подробнее</a>
-  <hr />
+  <div class="movie-grid">
+    <div
+      class="movie-card"
+      *ngFor="let movie of filteredMovies"
+      (click)="goToDetail(movie.id)"
+    >
+      <img
+        [src]="movie.poster || 'https://via.placeholder.com/300x450?text=No+Image'"
+        [alt]="movie.title"
+      />
+      <div class="movie-details">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.genre }} • ⭐ {{ movie.rating }}</p>
+        <p class="description">{{ movie.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>

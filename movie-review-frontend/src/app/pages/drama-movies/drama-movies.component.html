@@ -1,0 +1,13 @@
+<div class="container text-white py-5">
+    <h1 class="text-center bebas mb-4">Top Drama Movies</h1>
+  
+    <div class="movie-grid">
+      <div class="movie-card" *ngFor="let movie of movies" (click)="goToDetail(movie.id)">
+        <img [src]="movie.image" [alt]="movie.title" />
+        <div class="overlay">
+          <h5>{{ movie.title }}</h5>
+          <p>{{ movie.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -8,6 +8,7 @@ export interface Movie {
   description: string;
   genre: string;
   rating: number;
+  poster?: string;
 }
 
 @Injectable({

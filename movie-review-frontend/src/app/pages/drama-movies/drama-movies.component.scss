@@ -1,0 +1,32 @@
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.movie-card {
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.movie-card h5 {
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+}
