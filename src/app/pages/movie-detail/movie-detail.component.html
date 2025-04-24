@@ -1,0 +1,15 @@
+<div class="container text-white py-5" *ngIf="movie">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="movie.poster" class="img-fluid rounded shadow" />
+      </div>
+      <div class="col-md-8">
+        <h2 class="bebas mb-3">{{ movie.title }}</h2>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Rating:</strong> ⭐ {{ movie.rating }}</p>
+        <p>{{ movie.description }}</p>
+  
+        <a routerLink="/genres" class="btn btn-outline-light mt-4">← Back to Genres</a>
+      </div>
+    </div>
+  </div>

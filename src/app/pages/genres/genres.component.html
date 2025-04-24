@@ -1,0 +1,44 @@
+<!-- Заголовок -->
+<h2 class="heading">
+  {{ selectedGenre ? 'CHOOSE YOUR FILMS' : 'CHOOSE YOUR GENRE'}}
+</h2>
+
+<!-- Карточки жанров -->
+<div *ngIf="!selectedGenre" class="genres-grid">
+  <div
+    class="genre-card"
+    *ngFor="let genre of genres"
+    (click)="selectGenre(genre)">
+    <img [src]="'assets/images/genre-' + genre + '.jpg'" [alt]="genre" />
+    <h3>{{ genre | uppercase }}</h3>
+  </div>
+</div>
+
+<!-- Список фильмов -->
+<div *ngIf="selectedGenre && !selectedMovie" class="movies-container">
+  <button class="back-button" (click)="selectedGenre = ''">← Go Back to genre</button>
+
+  <h2 class="subheading">{{ selectedGenre | uppercase }} MOVIES</h2>
+
+  <app-movie-card
+    *ngFor="let movie of filteredMovies"
+    [movie]="movie"
+    (movieClicked)="openMovie(movie)">
+  </app-movie-card>
+</div>
+
+<!-- Подробности о фильме -->
+<div *ngIf="selectedMovie" class="movie-detail">
+  <button class="back-button" (click)="selectedMovie = null">← Go Back to movie lists</button>
+
+  <img [src]="selectedMovie.poster" alt="{{ selectedMovie.title }}">
+  <div class="details">
+    <h1>{{ selectedMovie.title }}</h1>
+    <p><strong>Year:</strong> {{ selectedMovie.year }}</p>
+    <p><strong>Country:</strong> {{ selectedMovie.country }}</p>
+    <p><strong>Genre:</strong> {{ selectedMovie.genre }}</p>
+    <p><strong>Rating:</strong> ⭐ {{ selectedMovie.rating }}</p>
+    <p class="description">{{ selectedMovie.description }}</p>
+  </div>
+  <app-review-section [movieId]="selectedMovie.id"></app-review-section>
+</div>
